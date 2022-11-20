@@ -55,9 +55,9 @@ function run(){
                 y:Math.floor(Math.random()*ongtren.height)-ongtren.height
             })
         }
-        if(ong[i].x ==0 )ong.splice(0,1);
-        // nếu ống đụng lề trái thì xóa nó đi     
-        if(ong[i].x==bird.x)score++;  
+        if(ong[i].x==bird.x)score++;
+        // nếu ống đụng lề trái thì xóa nó đi 
+        if(ong[i].x ==0 )ong.splice(0,1);    
         // gameover
         if(bird.y+birdimg.height==canvas.height||
         bird.x+birdimg.width>= ong[i].x && bird.x <= ong[i].x +ongtren.width
@@ -77,13 +77,12 @@ function run(){
 document.addEventListener("keydown",function(e){
     if (e.keyCode == 32){
         nhay.play()
-        bird.y-=60;   
+        bird.y -= 60   
     }
 })
-
+run()
 document.addEventListener("keydown",function(e){
     if (e.key == 'Enter'){
         this.location.reload()
     }
 })
-run()
