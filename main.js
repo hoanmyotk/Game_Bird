@@ -7,6 +7,7 @@ var ongtren= new Image();
 var ongduoi=new Image();
 var gameoverimg = new Image();
 var nhay = document.getElementById('nhay');
+var djt = document.getElementById('djt');
 gameoverimg.src="gameover.png"
 birdimg.src="bird.png";
 hinhnenchinh.src="nenchinh.png";
@@ -64,9 +65,10 @@ function run(){
         && (bird.y<=ong[i].y+ongtren.height||
         bird.y +birdimg.height>= ong[i].y+ khoangcachdenongduoi)    
         ){
+            djt.play()
             context.drawImage(gameoverimg, gameover.x, gameover.y)
             return;
-        }                   
+        }                       
     }
 
     scoreshow.innerHTML="score: "+score;
